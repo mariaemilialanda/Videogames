@@ -84,12 +84,18 @@ function validate(input) {
       })
     );
   }
-
-  function handleSelectGenres(e) {
-    if (!input.genres.includes(e.target.value)) {
+  function handleCheckboxChange(e) {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+    if (isChecked) {
       setInput({
         ...input,
-        genres: [...input.genres, e.target.value],
+        genres: [...input.genres, value],
+      });
+    } else {
+      setInput({
+        ...input,
+        genres: input.genres.filter((genre) => genre !== value),
       });
     }
   }
@@ -112,7 +118,7 @@ function validate(input) {
     } else {
       alert("Porfavor, revise la información agregada");
     }
-    
+
   }
   return (
     <div className={styles.container}>
@@ -149,20 +155,25 @@ function validate(input) {
           <label className={styles.label}>Imagen:</label> <input className={styles.input} type="text" value={input.background_image} name="background_image" onChange={(e) => handleChange(e)}/>
        </div>
         <div className={styles.divGen}>
-<label className={styles.label}>Generos:</label>
-          <select className={styles.selectGenre} id="genres" onChange={(e) => handleSelectGenres(e)}>
-          <option default>Select...</option>
-            {genres.map((genre) => (
-              <option value={genre.name}>{genre.name}</option>
-            ))}
-          </select>
-        </div>
-        
+        <label className={styles.label}>Géneros:</label>
+                      {genres.map((genre) => (
+                        <div key={genre.id}>
+                          <input
+                            type="checkbox"
+                            id={genre.id}
+                            name={genre.name}
+                            value={genre.name}
+                            onChange={handleCheckboxChange}
+                            checked={input.genres.includes(genre.name)}
+                          />
+                          <label htmlFor={genre.id}>{genre.name}</label>
+                         </div>))}
+          </div>
+
       </form>
-      
      </div>
-     
+
       <button className={styles.btn} type="submit"  onClick={(e) => handleSubmit(e)}>Crear</button>
-  
+
     </div>
   )};

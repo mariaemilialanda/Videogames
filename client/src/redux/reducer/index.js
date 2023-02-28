@@ -14,6 +14,7 @@ import {
     videogames: [],
     filteredVideogames: [],
     genres: [],
+    platforms:[],
     detail: [],
   };
   
