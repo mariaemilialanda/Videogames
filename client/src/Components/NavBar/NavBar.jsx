@@ -19,8 +19,10 @@ export default function NavBar() {
 
   return (
     <div className={styles.navbar}>
-        <button  className={styles.btn} onClick={(e) => { handleClick(e)}} >Recargar</button>
-        <Link to={"/create"}><button className={styles.btn} >Crear</button></Link>
+         <div className={styles.container}>
+        <button  className={styles.button} onClick={(e) => { handleClick(e)}} >Recargar</button>
+        <Link to={"/create"}><button className={styles.button} >Crear</button></Link>
+        </div>
         <SearchBar />
     </div>
   )

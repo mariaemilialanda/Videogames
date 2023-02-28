@@ -84,6 +84,7 @@ function validate(input) {
       })
     );
   }
+
   function handleCheckboxChange(e) {
     const value = e.target.value;
     const isChecked = e.target.checked;
@@ -99,6 +100,14 @@ function validate(input) {
       });
     }
   }
+
+  const selectPlat = (e)=> {
+    const prop = e.target.value
+     setInput({
+         ...input,
+         platforms: [...input.platforms, prop]
+     })
+}
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -124,14 +133,14 @@ function validate(input) {
     <div className={styles.container}>
       <div>
       <Link to="/home">
-        <button className={styles.btn}>Inicio</button>
+        <button className={styles.button}>Inicio</button>
       </Link>
       </div>
       <div className={styles.general}>
 
       <form className={styles.container} onSubmit={(e) => handleSubmit(e)}>   
         <div className={styles.divTitle}>
-          <h1>Crear Videojuego</h1>
+          <h1>  &#x1f3ae; Crea tu propio videojuego  &#x1f3ae;</h1>
         </div>
         <div className={styles.divName}>
           <label className={styles.label}>Nombre:</label>
@@ -154,7 +163,7 @@ function validate(input) {
         <div className={styles.divImg}> 
           <label className={styles.label}>Imagen:</label> <input className={styles.input} type="text" value={input.background_image} name="background_image" onChange={(e) => handleChange(e)}/>
        </div>
-        <div className={styles.divGen}>
+       <div className={styles.divGen}>
         <label className={styles.label}>Géneros:</label>
                       {genres.map((genre) => (
                         <div key={genre.id}>
@@ -170,7 +179,23 @@ function validate(input) {
                          </div>))}
           </div>
 
+          <div className={styles.container}>
+                <label className={styles.label} htmlFor="">Platforms:</label>
+                <select className={styles.select} name="platforms" id="" onChange={(e)=>selectPlat(e)}>
+                <option className={styles.option} value="Ps3">Ps3</option>
+                <option className={styles.option} value="Ps4">Ps4</option>
+                <option className={styles.option} value="Ps Vita">Ps Vita</option>
+                <option className={styles.option} value="Xbox">XBox</option>
+                <option className={styles.option} value="Xbox 360">Xbox 360</option>
+                <option className={styles.option} value="Nintendo">Nintendo</option>
+                <option className={styles.option} value="MacOs">MacOS</option>
+                <option className={styles.option} value="PC">PC</option>
+                <option className={styles.option} value="Linux">Linux</option>
+                </select>
+            </div>
+           
       </form>
+
      </div>
 
       <button className={styles.btn} type="submit"  onClick={(e) => handleSubmit(e)}>Crear</button>

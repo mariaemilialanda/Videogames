@@ -39,7 +39,7 @@ export default function Home() {
     dispatch(getGenres())
   }, [dispatch]);
 
-  
+
 
   function handleSortName(e) {
     e.preventDefault();
@@ -63,42 +63,42 @@ export default function Home() {
 
   return (
     <div>
-      
+
       <NavBar/>
 
       <div className={styles.filter}>
         <p>
           <span>
-          Order:
+          Orden:
           <select onChange={(e) => handleSortName(e)} className={styles.select}>
-            <option value="" className={styles.option}>Select</option>
-            <option value="asc" className={styles.option}>A to Z</option>
-            <option value="desc" className={styles.option}>Z to A</option>
+            <option value="" className={styles.option}>Seleccionar</option>
+            <option value="asc" className={styles.option}>A/Z</option>
+            <option value="desc" className={styles.option}>Z/A</option>
           </select>
           </span>
           <span>
           Rating:
           <select onChange={(e) => handleSortRating(e)} className={styles.select}>
-            <option value="" className={styles.option}>Select</option>
-            <option value="ascendant" className={styles.option}>Ascendant</option>
-            <option value="descendant" className={styles.option}>Descendant</option>
+            <option value="" className={styles.option}>Seleccionar</option>
+            <option value="ascendant" className={styles.option}>Ascendente</option>
+            <option value="descendant" className={styles.option}>Descendente</option>
           </select>
           </span>
           <span>
-          Genre:
+          Genero:
           <select onChange={(e) => handleFilterGenre(e)} className={styles.select}>
-          <option value="all" className={styles.option}>All</option>
+          <option value="all" className={styles.option}>Ver todos</option>
             {genres.map((genre) => (
               <option value={genre.name} className={styles.option}>{genre.name}</option>
             ))}
           </select>
           </span>
           <span>
-          Origin:
+          Origen:
           <select onChange={(e) => handleOriginFilter(e)} className={styles.select}>
-            <option value="all" className={styles.option}>All</option>
-            <option value={true} className={styles.option}>Created</option>
-            <option value="false" className={styles.option}>Existing</option>
+            <option value="all" className={styles.option}>Ver todos</option>
+            <option value={true} className={styles.option}>Creados</option>
+            <option value="false" className={styles.option}>Existentes</option>
           </select>
           </span>
         </p>
@@ -122,7 +122,7 @@ export default function Home() {
           );
         })}
       </div>
-    
+
       <div>
   <Pages
     videogamesPerPage={videogamesPerPage}
@@ -131,7 +131,7 @@ export default function Home() {
   />
 </div>
 
-      
+
 
 
     </div>
