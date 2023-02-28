@@ -1,0 +1,21 @@
+.card {
+    font-family: 'Press Start 2P', cursive;
+    color: fuchsia;
+    font-size: 0.9rem;
+    background-color: rgba(9, 246, 223, 0.754); /* Fondo transparente */
+    padding: 10px 20px;
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0px 0px 5px 1px rgba(247, 243, 247, 0.58); /* Sombra blanca */
+    flex: 0 0 calc(33.33% - 10px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  .cardName {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+ 
