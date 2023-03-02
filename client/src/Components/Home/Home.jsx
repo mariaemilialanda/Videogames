@@ -87,7 +87,7 @@ export default function Home() {
           <span  className={styles.genero}>
           Genero:
           <select onChange={(e) => handleFilterGenre(e)} className={styles.select}>
-          <option value="all" className={styles.option}>Ver</option>
+          <option value="all" className={styles.option}>Todos</option>
             {genres.map((genre) => (
               <option value={genre.name} className={styles.option}>{genre.name}</option>
             ))}
@@ -96,7 +96,7 @@ export default function Home() {
           <span>
           Origen:
           <select onChange={(e) => handleOriginFilter(e)} className={styles.select}>
-            <option value="all" className={styles.option}>Ver </option>
+            <option value="all" className={styles.option}>Todos</option>
             <option value={true} className={styles.option}>Creados</option>
             <option value="false" className={styles.option}>Existentes</option>
           </select>

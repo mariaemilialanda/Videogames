@@ -28,23 +28,24 @@ function validate(input) {
           }
         }
 
-        if (!input.description) {
-          errors.description = "Por favor, ingrese una descripción";
+        if (!input.description) {    
+          errors.description = "Por favor, ingrese una descripción"
         } else {
           if (input.description.replace(/ /g, "") === "") {
             errors.description = "Por favor, ingrese una descripción";
           }
         }
 
-        if (input.rating !== undefined && (input.rating < 0 || input.rating > 5)) {
-          errors.rating = "El rango del rating solo puede ir desde 0 a 5";
+        if (input.rating !== undefined && (input.rating < 0 || input.rating > 5)) {        
+          errors.rating = "El rango del rating solo puede ir desde 0 a 5"
         } 
 
         if (!input.released) {
-          errors.released = "Por favor, ingrese una fecha";
+          
+          errors.released = "Por favor, ingrese una fecha"
         } else {
           const dateRegex = /^(\d{4})-(\d{2})-(\d{2})$/;
-          if (!dateRegex.test(input.released)) {
+          if (!dateRegex.test(input.released)) {           
             errors.released = "Por favor, ingrese una fecha válida en formato YYYY-MM-DD";
           }
         }
@@ -132,77 +133,98 @@ function validate(input) {
   }
   return (
     <div className={styles.container}>
-      <div>
-      <Link to="/home">
-        <button className={styles.button}>Inicio</button>
-      </Link>
-      </div>
-      <div className={styles.general}>
-
-      <form className={styles.container} onSubmit={(e) => handleSubmit(e)}>   
-        <div className={styles.divTitle}>
-          <h1>  &#x1f3ae; Crea tu propio videojuego  &#x1f3ae;</h1>
-        </div>
-        <div className={styles.divName}>
-          <label className={styles.label}>Nombre:</label>
-          <input className={styles.input} type="text" value={input.name} name="name" onChange={(e) => handleChange(e)}/>
-          {errors?.name && <p className={styles.errors}>{errors.name}</p>}
-        </div>
-        <div className={styles.divDescription}>
-          <label className={styles.label}>Descripción:</label> <textarea className={styles.textarea} type="text" value={input.description} name="description" onChange={(e) => handleChange(e)} />
-          {errors?.description && <p className={styles.errors}>{errors.description}</p>}
-        </div>
-        <div className={styles.divRating}> 
-          <label className={styles.label}>Rating:</label> <input className={styles.input} type="number" value={input.rating} name="rating" onChange={(e) => handleChange(e)} />
-          {errors?.rating && <p className={styles.errors}>{errors.rating}</p>}
-        </div>
-        <div className={styles.divReleased}>
-          <label className={styles.label}>Lanzamiento:</label>
-            <input className={styles.input} type="Date" value={input.released} name="released" min="1900-00-00" max="2050-12-31" onChange={(e) => handleChange(e)} />
-          {errors?.released && <p className={styles.errors}>{errors.released}</p>}
-        </div>
-        <div className={styles.divImg}> 
-          <label className={styles.label}>Imagen:</label> <input className={styles.input} type="text" value={input.background_image} name="background_image" onChange={(e) => handleChange(e)}/>
-       </div>
-       <div className={styles.divGen}>
-        <div>
-          <label className={styles.generos}>Géneros:</label>
+          <div>
+                  <Link to="/home">
+                    <button classname={styles.inicio}>Inicio</button>
+                  </Link>
           </div>
-                      {genres.map((genre) => (
-                        <div key={genre.id} className={styles.itemGeneros}>
-                          <input
-                            type="checkbox"
-                            id={genre.id}
-                            name={genre.name}
-                            value={genre.name}
-                            onChange={handleCheckboxChange}
-                            checked={input.genres.includes(genre.name)}
-                          />
-                          <label htmlFor={genre.id}>{genre.name}</label>
-                         </div>))}
-         <div></div>
-          </div>
-
-          <div className={styles.container}>
-                <label className={styles.platforms} htmlFor="">Platforms:</label>
-                <select className={styles.select} name="platforms" id="" onChange={(e)=>selectPlat(e)}>
-                <option className={styles.option} value="Ps3">Ps3</option>
-                <option className={styles.option} value="Ps4">Ps4</option>
-                <option className={styles.option} value="Ps Vita">Ps Vita</option>
-                <option className={styles.option} value="Xbox">XBox</option>
-                <option className={styles.option} value="Xbox 360">Xbox 360</option>
-                <option className={styles.option} value="Nintendo">Nintendo</option>
-                <option className={styles.option} value="MacOs">MacOS</option>
-                <option className={styles.option} value="PC">PC</option>
-                <option className={styles.option} value="Linux">Linux</option>
-                </select>
-            </div>
-           
-      </form>
-
-     </div>
-
-      <button className={styles.btn} type="submit"  onClick={(e) => handleSubmit(e)}>Crear</button>
-
+          <div className={styles.bloqueCompleto}> 
+               <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>   
+                      <div className={styles.divTitle}>
+                             <h1>  &#x1f3ae; Crea tu propio videojuego  &#x1f3ae;</h1>
+                      </div>
+                      <div className={styles.subBloque}>
+                      <div className={styles.divLabel}>
+                            <label className={styles.labelTitle}>Nombre:</label>
+                      </div>
+                      <div className={styles.divInput}>
+                            <input className={styles.input} type="text" value={input.name} name="name" onChange={(e) => handleChange(e)}/>
+                                {errors?.name && <p className={styles.errors}>{errors.name}</p>}
+                      </div>
+                      </div>
+                      <div className={styles.subBloque}>
+                      <div className={styles.divLabel}>
+                            <label className={styles.labelTitle}>Descripción:</label> 
+                      </div>
+                      <div className={styles.divInput}>
+                          <textarea className={styles.textarea} type="text" value={input.description} name="description" onChange={(e) => handleChange(e)} />
+                          {errors?.description && <p className={styles.errors}>{errors.description}</p>}
+                     </div>
+                     </div>
+                     <div className={styles.subBloque}>
+                     <div className={styles.divLabel}> 
+                         <label className={styles.labelTitle}>Rating:</label>
+                     </div>
+                     <div className={styles.divInput}>
+                        <input className={styles.input} type="number" value={input.rating} name="rating" onChange={(e) => handleChange(e)} />
+                        {errors?.rating && <p className={styles.errors}>{errors.rating}</p>}
+                     </div>
+                     </div>
+                     <div className={styles.subBloque}>
+                    <div className={styles.divLabel}>
+                       <label className={styles.labelTitle}>Lanzamiento:</label>
+                    </div>
+                    <div className={styles.divInput}>
+                        <input className={styles.input} type="Date" value={input.released} name="released" min="1900-00-00" max="2050-12-31" onChange={(e) => handleChange(e)} />
+                       {errors?.released && <p className={styles.errors}>{errors.released}</p>}
+                    </div>
+                    </div>
+                    <div className={styles.subBloque}>
+                   <div className={styles.divLabel}> 
+                        <label className={styles.labelTitle}>Imagen:</label>
+                   </div>
+                   <div className={styles.divInput}>
+                         <input className={styles.input} type="text" value={input.background_image} name="background_image" onChange={(e) => handleChange(e)}/>
+                   </div>
+                   </div>
+                   <div className={styles.subBloqueG}>
+                   <div className={styles.divLabel}>
+                        <label className={styles.labelTitle}>Géneros:</label>
+                    </div>
+                    {genres.map((genre) => (
+                      <div key={genre.id} className={styles.divInput}>
+                            <input
+                              type="checkbox"
+                              id={genre.id}
+                              name={genre.name}
+                              value={genre.name}
+                              onChange={handleCheckboxChange}
+                              checked={input.genres.includes(genre.name)}
+                            />
+                            <label htmlFor={genre.id}>{genre.name}</label>
+                          
+                    </div>))}
+                    </div>
+                    <div className={styles.subBloque}>
+                    <div className={styles.divLabel}>
+                       <label className={styles.platforms} htmlFor="">Platforms:</label>
+                   </div>
+                   <div className={styles.divInput}>
+                        <select className={styles.select} name="platforms" id="" onChange={(e)=>selectPlat(e)}>
+                              <option className={styles.option} value="Ps3">Ps3</option>
+                              <option className={styles.option} value="Ps4">Ps4</option>
+                              <option className={styles.option} value="Ps Vita">Ps Vita</option>
+                              <option className={styles.option} value="Xbox">XBox</option>
+                              <option className={styles.option} value="Xbox 360">Xbox 360</option>
+                              <option className={styles.option} value="Nintendo">Nintendo</option>
+                              <option className={styles.option} value="MacOs">MacOS</option>
+                              <option className={styles.option} value="PC">PC</option>
+                              <option className={styles.option} value="Linux">Linux</option>
+                        </select>
+                     </div>
+                     </div>
+                </form>
+           </div>
+      <button className={styles.btn} type="submit"  onClick={(e) => handleSubmit(e)}>Crear </ button>
     </div>
   )};

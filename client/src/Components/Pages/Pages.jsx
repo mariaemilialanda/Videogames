@@ -33,7 +33,7 @@ export default function Pages({ videogamesPerPage, allVideogames, currentPage, s
          {
           totalPages === 0 ? null : 
         <button className={styles.btn} onClick={() => currentPage= 1 ? null : setCurrentPage(currentPage - 1)}>
-          Anterior
+          Primera
         </button>
 
          }
@@ -59,7 +59,7 @@ export default function Pages({ videogamesPerPage, allVideogames, currentPage, s
 
          { totalPages === 0 ? null :
         <button className={styles.btn} onClick={() =>  currentPage= totalPages ? null : setCurrentPage(currentPage + 1)}>
-          Siguiente
+          Última
         </button>
 
          }

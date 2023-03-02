@@ -18,51 +18,55 @@ export default function VideogameDetail(props) {
     console.log(singleVideogame);
     
     return (
-      <div>
+      <div className={styles.all}>
         {singleVideogame && singleVideogame.length > 0 ? (
 
           
           <div className={styles.container}>
-  
-            <div className={styles.bloque1}>
-              <img src={singleVideogame[0].background_image} className={styles.img} alt="imagen detalle" /> 
-              <div className={styles.name}>
-                <h1>{singleVideogame[0].name}</h1>
-              </div>
-              <div className={styles.description}>
-                <p>{singleVideogame[0].description.replace(/<[^>]*>?/g, "")}</p>
-              </div>
-            </div>
-              <span className={styles.spancontainer}>
-              <div className={styles.released}>
-                <h3 className={styles.titleFont}>Lanzamiento:</h3> <h3>{singleVideogame[0].released}</h3>
-              </div>
-              
-              <div className={styles.rating}>
-                <h3 className={styles.titleFont}>Rating: </h3><h3>{singleVideogame[0].rating}</h3>
-              </div>
-              
-              <div>
-                <div className={styles.title}>
-                  <h3 className={styles.titleFont}>Generos:</h3>
-                </div> 
-                <div className={styles.elements}>
-                  {singleVideogame[0].genres.map((genre) => (
-                    <h4 key={genre.name}>{genre.name}</h4>
-                  ))}
+                <div  className={styles.bloque1}>
+                        <div className={styles.divImg} >       
+                                  <img src={singleVideogame[0].background_image} className={styles.img} alt="imagen detalle" /> 
+                        </div>
+                        <div  className={styles.subBloque}>
+                                      <div className={styles.divName}>
+                                              <h1 className={styles.name}>{singleVideogame[0].name}</h1>
+                                      </div>
+                                      <div className={styles.divDescr}>
+                                              <p  className={styles.description}>{singleVideogame[0].description.replace(/<[^>]*>?/g, "")}</p>
+                                      </div>
+                        </div>
                 </div>
-              </div>
-              <div>
-                <div className={styles.title}>
-                  <h3 className={styles.titleFont}>Plataformas:</h3>
-                </div> 
-                <div className={styles.elements}>
-                  {singleVideogame[0].platforms.map((platform) => (
-                    <h4 key={platform.name}>{platform.name}</h4>
-                  ))}
+                <div className={styles.subBloque2}>
+                            <div className={styles.bloque2} >
+                                  <div className={styles.divRel}>
+                                              <h3 className={styles.title}>Lanzamiento:</h3> <h3 className={styles.value}>{singleVideogame[0].released}</h3>
+                                  </div>
+                                  <div className={styles.divRating}>
+                                                <h3 className={styles.title}>Rating: </h3>
+                                                <h3  className={styles.value}>{singleVideogame[0].rating}</h3>
+                                  </div>
+                            </div>
+                            <div className={styles.bloque3}>
+                                   <div  className={styles.subBloque3}>
+                                          <div className={styles.divGen}>
+                                                          <h3 className={styles.title}>Generos:</h3>
+                                          </div> 
+                                          <div className={styles.divElement}>
+                                                        {singleVideogame[0].genres.map((genre) => (
+                                                        <h4 key={genre.name}>{genre.name}</h4>))}
+                                            </div>
+                                    </div>
+                                    <div className={styles.subBloque4}>
+                                              <div className={styles.divPlat}>
+                                                        <h3 className={styles.title}>Plataformas:</h3>
+                                              </div> 
+                                              <div className={styles.divElement}>
+                                                        {singleVideogame[0].platforms.map((platform) => (
+                                                        <h4 key={platform.name}>{platform.name}</h4> ))}
+                                              </div>
+                                    </div>
                 </div>
-              </div>
-              </span>
+                 </div>
             <Link to="/home">
               <button className={styles.btn}>Inicio</button>
             </Link>
