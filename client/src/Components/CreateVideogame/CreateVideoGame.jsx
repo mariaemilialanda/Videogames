@@ -205,7 +205,9 @@ function validate(input) {
                           
                     </div>))}
                     </div>
-                    <div className={styles.subBloque}>
+                    <br />
+
+                    <div className={styles.subBloqueP}>
                     <div className={styles.divLabel}>
                        <label className={styles.platforms} htmlFor="">Platforms:</label>
                    </div>
