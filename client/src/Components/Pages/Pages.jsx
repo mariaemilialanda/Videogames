@@ -29,16 +29,20 @@ export default function Pages({ videogamesPerPage, allVideogames, currentPage, s
 
   return (
     <div className={styles.container}>
-      {currentPage > 1 && (
-        <button className={styles.btn} onClick={() => setCurrentPage(currentPage - 1)}>
+      
+         {
+          totalPages === 0 ? null : 
+        <button className={styles.btn} onClick={() => currentPage= 1 ? null : setCurrentPage(currentPage - 1)}>
           Anterior
         </button>
-      )}
+
+         }
+
 
       {pageNumbers.map((number, index) => (
         <button
           key={index}
-          className={`${styles.btn} ${currentPage === number ? styles.active : ''}`}
+          className={currentPage === number ? styles.active : styles.btn}
           onClick={() => {
             if (number !== '<<' && number !== '>>') {
               setCurrentPage(number);
@@ -53,11 +57,13 @@ export default function Pages({ videogamesPerPage, allVideogames, currentPage, s
         </button>
       ))}
 
-      {currentPage < totalPages && (
-        <button className={styles.btn} onClick={() => setCurrentPage(currentPage + 1)}>
+         { totalPages === 0 ? null :
+        <button className={styles.btn} onClick={() =>  currentPage= totalPages ? null : setCurrentPage(currentPage + 1)}>
           Siguiente
         </button>
-      )}
+
+         }
+   
     </div>
   );
 }

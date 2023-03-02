@@ -165,7 +165,9 @@ function validate(input) {
           <label className={styles.label}>Imagen:</label> <input className={styles.input} type="text" value={input.background_image} name="background_image" onChange={(e) => handleChange(e)}/>
        </div>
        <div className={styles.divGen}>
-        <label className={styles.generos}>Géneros:</label>
+        <div>
+          <label className={styles.generos}>Géneros:</label>
+          </div>
                       {genres.map((genre) => (
                         <div key={genre.id} className={styles.itemGeneros}>
                           <input
@@ -178,6 +180,7 @@ function validate(input) {
                           />
                           <label htmlFor={genre.id}>{genre.name}</label>
                          </div>))}
+         <div></div>
           </div>
 
           <div className={styles.container}>
