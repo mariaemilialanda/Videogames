@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getVideogamesByName } from "../../redux/actions/index";
-import syles from "./SearchBar.module.css";
+import styles from "./SearchBar.module.css";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -17,16 +17,16 @@ export default function SearchBar() {
   }
 
   return (
-    <div className={syles.searchbar}>
+    <div className={styles.searchbar}>
       <input
-        className={syles.input}
+        className={styles.input}
         type="text"
         value={name}
         placeholder="Busca un videojuego"
         onChange={(e) => handleImputChange(e)}
       />
       <button
-        className={syles.btnSearch}
+        className={styles.buttonSearch}
         type="submit"
         onClick={(e) => handleSubmit(e)}
       >

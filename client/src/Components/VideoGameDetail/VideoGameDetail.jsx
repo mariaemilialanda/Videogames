@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams , useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {  getDetail } from "../../redux/actions";
 import styles from "../VideoGameDetail/VideoGameCard.module.css";
 
@@ -8,7 +8,7 @@ export default function VideogameDetail(props) {
     const { id } = useParams();
   
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    
   
     useEffect(() => {
       dispatch(getDetail(id));
@@ -20,22 +20,20 @@ export default function VideogameDetail(props) {
     return (
       <div>
         {singleVideogame.length > 0 ? (
+
+          
           <div className={styles.container}>
   
-            <div className={styles.left}>
-              <img src={singleVideogame[0].background_image} className={styles.img} />
-            </div>
-  
-            <div className={styles.right}>
-  
+            <div className={styles.bloque1}>
+              <img src={singleVideogame[0].background_image} className={styles.img} alt="imagen detalle" /> 
               <div className={styles.name}>
                 <h1>{singleVideogame[0].name}</h1>
               </div>
-              
               <div className={styles.description}>
                 <p>{singleVideogame[0].description.replace(/<[^>]*>?/g, "")}</p>
               </div>
-              
+            </div>
+              <span className={styles.spancontainer}>
               <div className={styles.released}>
                 <h3 className={styles.titleFont}>Lanzamiento:</h3> <h3>{singleVideogame[0].released}</h3>
               </div>
@@ -64,8 +62,10 @@ export default function VideogameDetail(props) {
                   ))}
                 </div>
               </div>
-              
-            </div>
+              </span>
+            
+
+            
         
             <Link to="/home">
               <button className={styles.btn}>Inicio</button>

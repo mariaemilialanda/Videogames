@@ -68,26 +68,26 @@ export default function Home() {
 
       <div className={styles.filter}>
         <p>
-          <span>
+          <span className={styles.orden}>
           Orden:
           <select onChange={(e) => handleSortName(e)} className={styles.select}>
-            <option value="" className={styles.option}>Seleccionar</option>
+            <option value="" className={styles.option}>Ordenar</option>
             <option value="asc" className={styles.option}>A/Z</option>
             <option value="desc" className={styles.option}>Z/A</option>
           </select>
           </span>
-          <span>
+          <span className={styles.rating}>
           Rating:
           <select onChange={(e) => handleSortRating(e)} className={styles.select}>
-            <option value="" className={styles.option}>Seleccionar</option>
+            <option value="" className={styles.option}>Ordenar</option>
             <option value="ascendant" className={styles.option}>Ascendente</option>
             <option value="descendant" className={styles.option}>Descendente</option>
           </select>
           </span>
-          <span>
+          <span  className={styles.genero}>
           Genero:
           <select onChange={(e) => handleFilterGenre(e)} className={styles.select}>
-          <option value="all" className={styles.option}>Ver todos</option>
+          <option value="all" className={styles.option}>Ver</option>
             {genres.map((genre) => (
               <option value={genre.name} className={styles.option}>{genre.name}</option>
             ))}
@@ -96,7 +96,7 @@ export default function Home() {
           <span>
           Origen:
           <select onChange={(e) => handleOriginFilter(e)} className={styles.select}>
-            <option value="all" className={styles.option}>Ver todos</option>
+            <option value="all" className={styles.option}>Ver </option>
             <option value={true} className={styles.option}>Creados</option>
             <option value="false" className={styles.option}>Existentes</option>
           </select>

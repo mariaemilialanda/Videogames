@@ -43,6 +43,7 @@ const getVideogamesHandler= async (req, res, next) => {
     const videogameId = req.params.id;
     try {
       let videogameById = await getVideogameById(videogameId);
+      console.log("videogameById",videogameById)
       if (videogameById) {
         res.status(200).send(videogameById);
       }
@@ -51,6 +52,7 @@ const getVideogamesHandler= async (req, res, next) => {
     }
   };
 
+
   const createVideogameHandler = async (req, res, next) => {
     const {
       background_image,
@@ -58,20 +60,27 @@ const getVideogamesHandler= async (req, res, next) => {
       description,
       released,
       rating,
-      genre,
+      genres,
       platforms
     } = req.body;
-  
-    if (!Array.isArray(genre)) {
-      return res.status(400).send('genre debe ser un arreglo');
+     
+    // if (!Array.isArray(genre)) {
+    //   return res.status(400).send('genre debe ser un arreglo');
+    // }
+   const genresObj= await Promise.all(genres.map((g)=> Genre.findOne({
+    where: {
+      name: g.name
     }
-  
-    const genresObj = await Genre.findAll({
-      where: {
-        name: genre.map((g) => g.name)
-      }
-    });
-    const genreId = genresObj.map((genre) => genre.id);
+   })))
+
+   console.log("generos",genresObj)
+
+    // const genresObj = await Genre.findOne({
+    //   where: {
+    //     name: genre.map((g) => g.name)
+    //   }
+    // });
+    // const genreId = genresObj.map((genre) => genre.id);
   
     try {
       const newVideogame = await Videogame.create({
@@ -80,11 +89,11 @@ const getVideogamesHandler= async (req, res, next) => {
         background_image,
         released,
         rating,
-        genreId,
+        //genre,
         platforms
       });
   
-      newVideogame.addGenre(genresObj);
+      genresObj.map(g=>newVideogame.addGenre(g));
   
       res.status(201).send(newVideogame);
     } catch (error) {

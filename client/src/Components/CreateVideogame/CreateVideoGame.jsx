@@ -67,6 +67,7 @@ function validate(input) {
       platforms: [],
       genres: [],
     });
+    console.log(input)
 
   useEffect(() => {
     dispatch(getGenres());
@@ -86,26 +87,26 @@ function validate(input) {
   }
 
   function handleCheckboxChange(e) {
-    const value = e.target.value;
+    const name = e.target.value;
     const isChecked = e.target.checked;
     if (isChecked) {
       setInput({
         ...input,
-        genres: [...input.genres, value],
+        genres: [...input.genres, {name}],
       });
     } else {
       setInput({
         ...input,
-        genres: input.genres.filter((genre) => genre !== value),
+        genres: input.genres.filter((genre) => genre !== name),
       });
     }
   }
 
   const selectPlat = (e)=> {
-    const prop = e.target.value
+    const name = e.target.value
      setInput({
          ...input,
-         platforms: [...input.platforms, prop]
+         platforms: [...input.platforms, {name}]
      })
 }
 
