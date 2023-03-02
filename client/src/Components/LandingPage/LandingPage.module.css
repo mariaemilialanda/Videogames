@@ -1,30 +1,26 @@
-body{
+.landing{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
- background-image: url(../../assets/videogamesBackground.jpeg);
- background-size: cover;
-    overflow-x: hidden;
-}
-.div{
-    font-family: 'Press Start 2P', cursive;
-}
 
 .h1{
     font-size: 4rem;
     color: fuchsia;
     text-shadow: 3px 3px lightblue; 
-    margin-top: 12rem; 
-    animation: moveLetters 1s infinite;
+    animation: moveLetters 0.5s infinite;
 }
 
 @keyframes moveLetters {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(20px);
+    transform: translateY(5px);
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -32,11 +28,9 @@ body{
     font-size: 2.5rem;
     color: yellow;
     text-shadow: 3px 3px fuchsia;
-    margin-top: 5rem;
  }
 
  .button {
-    margin-top: 3rem;
     font-size: 1.5rem; 
     text-shadow: 1px 1px gray; 
     font-family: 'Press Start 2P', cursive;
@@ -46,27 +40,10 @@ body{
     cursor: pointer;
     padding: 0.5rem 1rem;
     background-color: transparent;
-    border: 2px solid blue;
+    border: none;
 }
 
-.button:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: yellow;
-    opacity: 0.5;
-    z-index: -1;
-    transition: transform 0.2s ease-in-out;
+
+.button:hover {
     transform: scale(0.9);
-}
-
-.button:hover:before {
-    transform: scale(1);
-}
-
-.button:active:before {
-    transform: scale(0.8);
 }

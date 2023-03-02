@@ -39,34 +39,35 @@ export default function VideogameDetail(props) {
                 <div className={styles.subBloque2}>
                             <div className={styles.bloque2} >
                                   <div className={styles.divRel}>
-                                              <h3 className={styles.title}>Lanzamiento:</h3> <h3 className={styles.value}>{singleVideogame[0].released}</h3>
+                                              <h3 className={styles.title}>Lanzamiento </h3> <h3 className={styles.value}>{singleVideogame[0].released}</h3>
                                   </div>
                                   <div className={styles.divRating}>
-                                                <h3 className={styles.title}>Rating: </h3>
+                                                <h3 className={styles.title}>Rating </h3>
                                                 <h3  className={styles.value}>{singleVideogame[0].rating}</h3>
                                   </div>
                             </div>
                             <div className={styles.bloque3}>
                                    <div  className={styles.subBloque3}>
                                           <div className={styles.divGen}>
-                                                          <h3 className={styles.title}>Generos:</h3>
+                                                          <h3 className={styles.title}>Generos</h3>
                                           </div> 
                                           <div className={styles.divElement}>
                                                         {singleVideogame[0].genres.map((genre) => (
                                                         <h4 key={genre.name}>{genre.name}</h4>))}
                                             </div>
                                     </div>
-                                    <div className={styles.subBloque4}>
+                                    
+                </div>
+                 </div>
+                 <div className={styles.subBloque4}>
                                               <div className={styles.divPlat}>
-                                                        <h3 className={styles.title}>Plataformas:</h3>
+                                                        <h3 className={styles.title}>Plataformas</h3>
                                               </div> 
                                               <div className={styles.divElement}>
                                                         {singleVideogame[0].platforms.map((platform) => (
                                                         <h4 key={platform.name}>{platform.name}</h4> ))}
                                               </div>
                                     </div>
-                </div>
-                 </div>
             <Link to="/home">
               <button className={styles.btn}>Inicio</button>
             </Link>

@@ -4,7 +4,7 @@ import styles from "./LandingPage.module.css"
 
 export default function LandingPage() {
   return (
-    <div className={styles.div}>
+    <div className={styles.landing}>
       <div>
       <h1 className={styles.h1}>HENRY VIDEOGAMES</h1>
       <h2 className={styles.h2}>Bienvenidos</h2>

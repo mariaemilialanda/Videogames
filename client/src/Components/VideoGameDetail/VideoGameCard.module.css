@@ -2,6 +2,7 @@
     /* background-color: rgb(99, 23, 169);
     background: linear-gradient(to bottom, #9400d3, #00d5ff); */
     font-family: 'Press Start 2P', cursive;
+    height: 90%;
 }
 
 .bloque1{
@@ -11,24 +12,24 @@
 
 .bloque2{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 3rem;
+   
 }
 
 .img {
     margin-top: 3rem;
    width: 30rem;
-   border-radius: 5%;
+   border-radius: 30px;
    box-shadow: 10px 10px rgb(245, 3, 241);
+   border: 2px solid rgb(245, 3, 241);;
  }
 
  .description{
     margin-top: 2rem;
-    width: 48rem;
-    font-size: 0.9rem;
-    color: rgb(243, 137, 15);
-    text-shadow: 1px 1px rgb(11, 10, 11);
+    width: 40rem;
+    font-size: 0.8rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0 90px;
  }
 
  .name{
@@ -39,119 +40,37 @@
  }
 
 .subBloque2{
-    margin-top: -4rem;
-    margin-left: 2rem;
     display: flex;
+    justify-content: center;
+    margin: 40px 0;
 }
 
 .title{
     font-size: 1rem;
     color:rgb(244, 11, 248);
     text-shadow: 2px 2px rgb(244, 252, 3); 
+    margin-right: 40px;
 }
 
 .value, .divElement{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: rgb(68, 243, 15);
     text-shadow: 2px 2px rgb(11, 10, 11);
 }
-
-.subBloque3, .subBloque4{
+.subBloque3{
+    margin: 0 auto;
     display: flex;
 }
-
-.btn{
-    margin-top: -8rem;
-    margin-left: 9rem;
-    font-size: 0.8rem; 
-    text-shadow: 1px 1px gray; 
-    font-family: 'Press Start 2P', cursive;
-    color: rgb(244, 11, 248);
-    text-shadow: 2px 2px rgb(251, 238, 3);
-    position: relative;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    background-color: rgba(247, 247, 20, 0.493);
-    border: 2px solid rgb(244, 11, 248);
-    }
-
-
-/* .all{
-    background-color: rgb(99, 23, 169);
-}
-
-.container {
+ .subBloque4{
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
-    font-family: 'Press Start 2P', cursive;
-  }
-  
-  .img {
-     margin-top:5rem ;
-     margin-left: 1rem;
-    width: 40rem;
-    border-radius: 5%;
-    box-shadow: 10px 10px rgb(245, 3, 241);
-  }
-
-  .name{
-    margin-top: 5rem;
-    font-size: 0.8rem;
-    color: rgb(255, 247, 0);
-    text-shadow: 3px 3px rgb(244, 11, 248); 
-  }
-  
-.description{
-    font-size: 0.9rem;
-    color: rgb(243, 140, 15);
-    text-shadow: 1px 1px rgb(11, 10, 11);
 
 }
-.released, .rating, .title, .elements{
-    margin-top: 3rem;
-    font-size: 0.8rem;
-    color: rgb(21, 255, 0);
-    text-shadow: 3px 3px rgb(8, 7, 8); 
-}
 
-.btn{
-    margin-bottom: 45rem;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 0.8rem; 
-    text-shadow: 1px 1px gray; 
-    font-family: 'Press Start 2P', cursive;
-    color: lightgreen;
-    text-shadow: 2px 2px rgb(1, 14, 10);
-    position: relative;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    background-color: transparent;
-    border: 2px solid rgb(15, 230, 90);
-    }
-    
-    .btn:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgb(247, 247, 42);
-        opacity: 0.5;
-        z-index: -1;
-        transition: transform 0.2s ease-in-out;
-        transform: scale(0.9);
-    }
-    
-    .btn:hover:before {
-        transform: scale(1);
-    }
-    
-    .btn:active:before {
-        transform: scale(0.8);
-    } */
+
 
 
 

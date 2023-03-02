@@ -1,34 +1,30 @@
 .card {
-  width: 15 rem;
+  width: 300px;
+  margin: 20px 0;
   font-family: 'Press Start 2P', cursive;
-  background-color: rgba(84, 246, 9, 0.754); 
-  padding: 10px 20px;
+  background-color: rgba(208, 64, 215, 0.366); 
   border-radius: 10px; 
-  border-color: solid rgb(251, 255, 0);
-  box-shadow: 0px 0px 5px 1px rgba(249, 249, 3, 0.58); 
-  flex: 0 0 calc(33.33% - 10px);
-  margin-bottom: 5rem;
-  display: flex;
-  flex-direction: column;
+  border: 1px solid rgb(67, 2, 67) !important;
+  padding: 10px;
+  
 }
 
 .cardName {
-  color: rgb(187, 8, 187);
-  text-shadow: 2px 2px rgb(11, 11, 0);
-  font-size: 1.2rem;
+  color: rgb(224, 191, 224);
+  font-size: 0.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .cardTitle {
-  font-size: 1rem;
+  font-size: 0.6rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 0.1rem;
   color: rgb(255, 255, 65);
-  text-shadow: 3px 2px rgb(11, 11, 0);
+
   border-bottom: none;
 }
 
@@ -51,7 +47,6 @@
 
 .genre h5 {
   color: rgb(246, 166, 67);
-  text-shadow: 2px 2px rgb(11, 11, 0);
   margin-right: 1.3rem;
   margin-bottom: 0.5rem;
 }

@@ -9,30 +9,14 @@
     cursor: pointer;
     padding: 0.5rem 1rem;
     background-color: transparent;
-    border: 2px solid rgb(250, 6, 136);
+    border: none;
 }
 
-.button:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 2, 95);
-    opacity: 0.5;
-    z-index: -1;
-    transition: transform 0.2s ease-in-out;
+
+.button:hover {
     transform: scale(0.9);
 }
 
-.button:hover:before {
-    transform: scale(1);
-}
-
-.button:active:before {
-    transform: scale(0.8);
-}
 
 .container{
     width: 20rem;
