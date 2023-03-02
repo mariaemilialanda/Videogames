@@ -32,8 +32,7 @@ const getVideogameByIdFromApi = async (id) => {
   };
   
   const getVideogameByIdFromDb = async (videogameId) => {
-    let videogameById = await Videogame.findByPk({
-      videogameId,
+    let videogameById = await Videogame.findByPk(videogameId, {
       include: 
         {
           model: Genre,
