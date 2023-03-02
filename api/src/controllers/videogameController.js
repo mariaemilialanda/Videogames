@@ -62,7 +62,7 @@ const getVideogameByIdFromApi = async (id) => {
     if (idType) {
       const VideogameByIdFromDb = await getVideogameByIdFromDb(videogameId);
       if (VideogameByIdFromDb.length !== 0) {
-        return VideogameByIdFromDb;
+        return [VideogameByIdFromDb];
       } else {
         throw new Error("El ID ingresado no existe.");
       }
@@ -70,7 +70,7 @@ const getVideogameByIdFromApi = async (id) => {
     if (Number.isInteger(Number(videogameId))) {
       const VideogameByIdFromApi = await getVideogameByIdFromApi(videogameId);
       if (VideogameByIdFromApi.length !== 0) {
-        return VideogameByIdFromApi;
+        return  VideogameByIdFromApi;
       } else {
         throw new Error("El ID ingresado no existe.");
       }

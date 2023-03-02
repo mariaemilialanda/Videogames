@@ -43,7 +43,7 @@ const getVideogamesHandler= async (req, res, next) => {
     const videogameId = req.params.id;
     try {
       let videogameById = await getVideogameById(videogameId);
-      console.log("videogameById",videogameById)
+      console.log("videogameId",videogameById)
       if (videogameById) {
         res.status(200).send(videogameById);
       }
@@ -73,7 +73,6 @@ const getVideogamesHandler= async (req, res, next) => {
     }
    })))
 
-   console.log("generos",genresObj)
 
     // const genresObj = await Genre.findOne({
     //   where: {

@@ -15,11 +15,11 @@ export default function VideogameDetail(props) {
     }, [dispatch, id]);
   
     const singleVideogame = useSelector((state) => state.detail);
-    
+    console.log(singleVideogame);
     
     return (
       <div>
-        {singleVideogame.length > 0 ? (
+        {singleVideogame && singleVideogame.length > 0 ? (
 
           
           <div className={styles.container}>
