@@ -19,6 +19,9 @@ export default function VideogameDetail(props) {
     
     return (
       <div className={styles.all}>
+         <Link to="/home">
+              <button className={styles.btn}>Inicio</button>
+            </Link>
         {singleVideogame && singleVideogame.length > 0 ? (
 
           
@@ -68,9 +71,7 @@ export default function VideogameDetail(props) {
                                                         <h4 key={platform.name}>{platform.name}</h4> ))}
                                               </div>
                                     </div>
-            <Link to="/home">
-              <button className={styles.btn}>Inicio</button>
-            </Link>
+           
         
           </div>
           
