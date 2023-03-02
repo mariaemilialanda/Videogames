@@ -42,15 +42,82 @@
     color: yellow;
     text-shadow: 3px 3px rgb(20, 20, 20); 
 }
-
-.label {
+.divName, .divDescription, .divRating, .divReleased,.divImg, .divPlatforms {
+    margin-left: 5rem;
+    margin-right: 45rem;
+    display: flex;
+    justify-content: space-around;
+    gap: rem;
+    align-items: flex-start;
+ 
+  }
+.label , .rating,.generos, .platforms {
     font-family: 'Press Start 2P', cursive;
     color: fuchsia;
     text-shadow: 3px 3px rgb(20, 20, 20);
-    margin-top: 35rem;
+   margin-bottom: 1rem;
   }
 
   .input, .textarea{
     margin-left: 10rem;
-    width: 30rem;
+    width: 15rem;
+    margin-bottom: 1rem;
   }
+
+  .generos, .platforms{
+    margin-left: -60rem;
+  }
+
+  .itemGeneros{
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(77, 255, 0);
+    text-shadow: 3px 3px rgb(20, 20, 20);
+    margin-left: -50rem;
+  }
+
+  .select{
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .btn {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 15rem;
+    font-size: 0.8rem; 
+    text-shadow: 1px 1px rgb(197, 6, 226); 
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(242, 255, 4);
+    text-shadow: 2px 2px rgb(1, 14, 10);
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 2px solid rgb(242, 255, 0);
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 247, 42);
+    opacity: 0.5;
+    z-index: -1;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0.9);
+}
+
+.btn:hover:before {
+    transform: scale(1);
+}
+
+.btn:active:before {
+    transform: scale(0.8);
+}
+
+.input, .textarea{
+    font-family: 'Press Start 2P', cursive;
+    width: 15rem;
+}

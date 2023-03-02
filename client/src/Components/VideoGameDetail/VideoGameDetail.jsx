@@ -63,15 +63,12 @@ export default function VideogameDetail(props) {
                 </div>
               </div>
               </span>
-            
-
-            
-        
             <Link to="/home">
               <button className={styles.btn}>Inicio</button>
             </Link>
         
           </div>
+          
         ) : (
           <div>Loading...</div>
         )}

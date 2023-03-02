@@ -165,9 +165,9 @@ function validate(input) {
           <label className={styles.label}>Imagen:</label> <input className={styles.input} type="text" value={input.background_image} name="background_image" onChange={(e) => handleChange(e)}/>
        </div>
        <div className={styles.divGen}>
-        <label className={styles.label}>Géneros:</label>
+        <label className={styles.generos}>Géneros:</label>
                       {genres.map((genre) => (
-                        <div key={genre.id}>
+                        <div key={genre.id} className={styles.itemGeneros}>
                           <input
                             type="checkbox"
                             id={genre.id}
@@ -181,7 +181,7 @@ function validate(input) {
           </div>
 
           <div className={styles.container}>
-                <label className={styles.label} htmlFor="">Platforms:</label>
+                <label className={styles.platforms} htmlFor="">Platforms:</label>
                 <select className={styles.select} name="platforms" id="" onChange={(e)=>selectPlat(e)}>
                 <option className={styles.option} value="Ps3">Ps3</option>
                 <option className={styles.option} value="Ps4">Ps4</option>
